@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat
+
 pipeline{
   agent any
   stages{
@@ -6,6 +8,11 @@ pipeline{
         script{
           println "this is println line and double quotes"
           print 'this is print line with single quotes'
+          def now_date = new Date()
+          println now_date
+
+          sdf = new SimpleDateFormat("MM_dd_yyyy_HH_mm")
+          println sdf.format(now_date)
         }
       }
     }
