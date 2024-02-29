@@ -12,7 +12,11 @@ pipeline{
           println now_date
 
           sdf = new SimpleDateFormat("MM_dd_yyyy_HH_mm")
-          println sdf.format(now_date)
+          def date_time = sdf.format(now_date)
+          println date_time
+          bat "mkdir test"
+          def datestr = "test" + date_time
+          bat """ xcopy test C:/${datestr} """
         }
       }
     }
