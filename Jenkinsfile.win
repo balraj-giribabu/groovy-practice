@@ -16,7 +16,7 @@ pipeline{
           println date_time
           bat "mkdir test"
           def datestr = "test" + date_time
-          bat """ xcopy test C:/${datestr} """
+          bat """ xcopy test C:\\${datestr} /e /i """
         }
       }
     }
